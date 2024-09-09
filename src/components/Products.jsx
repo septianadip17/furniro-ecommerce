@@ -1,8 +1,19 @@
 import React from 'react'
 
+
 const Products = () => {
   return (
-    <div>Products</div>
+    <div>
+      {/*  */}
+      <div>
+        <h1>Our Products</h1>
+      </div>
+
+      {/*  */}
+      <div>
+
+      </div>
+    </div>
   )
 }
 
