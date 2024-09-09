@@ -96,69 +96,50 @@ const Products = () => {
 
       {/* Products Grid */}
       <div className="grid grid-cols-4 gap-4">
-        {allProducts.map((product, index) => (
-          <div
-            key={index}
-            className="relative bg-gray-200 shadow rounded-lg overflow-hidden group"
-          >
-            {/* image product */}
-            <img src={product.img} alt={product.name} className="w-full" />
+        <div className="relative bg-gray-200 shadow rounded-lg overflow-hidden group">
+          {/* image */}
+          <img src={syltherine} alt={syltherine} className="w-full" />
+          <div className="absolute top-2 right-2 bg-red-500  text-white text-xs font-bold p-2 rounded-full">
+            -30%
+          </div>
 
-            {/* tag */}
-            {product.tagType && (
-              <div
-                className={`absolute top-2 right-2 ${
-                  product.tagType === "discount" ? "bg-red-500" : "bg-green-500"
-                } text-white text-xs font-bold p-2 rounded-full`}
-              >
-                {product.tagName}
+          {/* hover */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <button className="bg-white text-[#B88E2F] py-2 px-4 rounded-sm mb-4">
+              Add to Cart
+            </button>
+            {/* icon */}
+            <div className="flex gap-3 border-2 border-red-600 justify-center items-center">
+              <div className="flex items-center gap-1">
+                <img src={shareIcon} alt="Share" className="w-6 h-6" />
+                <p className="text-white">Share</p>
               </div>
-            )}
-
-            {/* hover */}
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <button className="bg-white text-[#B88E2F] py-2 px-4 rounded-sm mb-4">
-                Add to Cart
-              </button>
-
-              {/* icon */}
-              <div className="flex space-y-2 gap-3">
-                <div className="flex items-center gap-1">
-                  <img src={shareIcon} alt="Share" className="w-6 h-6" />
-                  <p className="text-white">Share</p>
-                </div>
-                <div className="flex items-center gap-1">
-                  <img src={compareIcon} alt="Compare" className="w-6 h-6" />
-                  <p className="text-white">Compare</p>
-                </div>
-                <div className="flex items-center gap-1">
-                  <img src={likeIcon} alt="Like" className="w-6 h-6" />
-                  <p className="text-white">Like</p>
-                </div>
+              <div className="flex items-center gap-1">
+                <img src={compareIcon} alt="Compare" className="w-6 h-6" />
+                <p className="text-white">Compare</p>
               </div>
-            </div>
-
-            {/* desc */}
-            <div className="p-4">
-              <h3 className="text-lg font-semibold">{product.name}</h3>
-              <p className="text-gray-500 text-sm">{product.desc}</p>
-              <div className="mt-2">
-                {product.discPrice ? (
-                  <div>
-                    <span className="font-bold">{product.discPrice}</span>
-                    <span className="text-gray-500 line-through ml-2">
-                      {product.normalPrice}
-                    </span>
-                  </div>
-                ) : (
-                  <span className="text-black font-bold">
-                    {product.normalPrice}
-                  </span>
-                )}
+              <div className="flex items-center gap-1">
+                <img src={likeIcon} alt="Like" className="w-6 h-6" />
+                <p className="text-white">Like</p>
               </div>
             </div>
           </div>
-        ))}
+
+          {/* desc */}
+          {/* desc */}
+          <div className="p-4">
+            <h3 className="text-lg font-semibold">Syltherine</h3>
+            <p className="text-gray-500 text-sm">Stylish cafe chair</p>
+            <div className="mt-2">
+              Rp. 2.500.000
+              <div>
+                <span className="font-bold"></span>
+                <span className="text-gray-500 line-through ml-2"></span>
+              </div>
+              <span className="text-black font-bold"></span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
