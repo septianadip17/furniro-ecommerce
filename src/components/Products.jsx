@@ -7,6 +7,9 @@ import grifo from "../assets/img/products/grifo.png";
 import muggo from "../assets/img/products/muggo.png";
 import pingky from "../assets/img/products/pingky.png";
 import potty from "../assets/img/products/potty.png";
+import shareIcon from "../assets/icons/share.svg";
+import compareIcon from "../assets/icons/compare.svg";
+import likeIcon from "../assets/icons/like.svg";
 
 const Products = () => {
   const allProducts = [
@@ -75,7 +78,7 @@ const Products = () => {
     },
     {
       name: "Potty",
-      desc: "Minialist flower pot",
+      desc: "Minimalist flower pot",
       discPrice: null,
       normalPrice: "500.000",
       tagType: "new",
@@ -85,53 +88,70 @@ const Products = () => {
   ];
 
   return (
-    <div>
-      {/* title */}
-      <div className="text-center">
+    <div className="container mx-auto p-3 m-6">
+      {/* Title */}
+      <div className="text-center m-7">
         <h1 className="mt-2 text-3xl font-bold">Our Products</h1>
       </div>
 
-      {/* products grid  */}
+      {/* Products Grid */}
       <div className="grid grid-cols-4 gap-4">
         {allProducts.map((product, index) => (
           <div
             key={index}
-            className="relative bg-white shadow rounded-lg overflow-hidden"
+            className="relative bg-gray-200 shadow rounded-lg overflow-hidden group"
           >
-            {/* Product Image */}
-            <img
-              src={product.img}
-              alt={product.name}
-              className="w-full h-48 object-cover"
-            />
+            {/* image product */}
+            <img src={product.img} alt={product.name} className="w-full" />
 
-            {/* Tag */}
+            {/* tag */}
             {product.tagType && (
               <div
-                className={`absolute top-2 right-2 bg-${
-                  product.tagType === "discount" ? "red" : "green"
-                }-500 text-white text-xs font-bold px-2 py-1 rounded-full`}
+                className={`absolute top-2 right-2 ${
+                  product.tagType === "discount" ? "bg-red-500" : "bg-green-500"
+                } text-white text-xs font-bold p-2 rounded-full`}
               >
                 {product.tagName}
               </div>
             )}
 
-            {/* Product Details */}
+            {/* hover */}
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <button className="bg-white text-[#B88E2F] py-2 px-4 rounded-sm mb-4">
+                Add to Cart
+              </button>
+
+              {/* icon */}
+              <div className="flex space-y-2 gap-3">
+                <div className="flex items-center gap-1">
+                  <img src={shareIcon} alt="Share" className="w-6 h-6" />
+                  <p className="text-white">Share</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <img src={compareIcon} alt="Compare" className="w-6 h-6" />
+                  <p className="text-white">Compare</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <img src={likeIcon} alt="Like" className="w-6 h-6" />
+                  <p className="text-white">Like</p>
+                </div>
+              </div>
+            </div>
+
+            {/* desc */}
             <div className="p-4">
               <h3 className="text-lg font-semibold">{product.name}</h3>
-              <p className="text-gray-500">{product.desc}</p>
+              <p className="text-gray-500 text-sm">{product.desc}</p>
               <div className="mt-2">
                 {product.discPrice ? (
                   <div>
-                    <span className="text-red-500 font-bold">
-                      {product.discPrice}
-                    </span>
+                    <span className="font-bold">{product.discPrice}</span>
                     <span className="text-gray-500 line-through ml-2">
                       {product.normalPrice}
                     </span>
                   </div>
                 ) : (
-                  <span className="text-gray-700 font-bold">
+                  <span className="text-black font-bold">
                     {product.normalPrice}
                   </span>
                 )}
