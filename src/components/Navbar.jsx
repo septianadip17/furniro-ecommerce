@@ -1,5 +1,10 @@
 import React from 'react'
 import furniroLogo from "../assets/img/furniro-logo.png"
+import accountIcon from "../assets/icons/account.svg"
+import searchIcon from "../assets/icons/search.svg"
+import heartIcon from "../assets/icons/heart.svg"
+import cartIcon from "../assets/icons/cart.svg"
+
 
 const Navbar = () => {
   return (
@@ -7,8 +12,8 @@ const Navbar = () => {
       <div>
         <img src={furniroLogo} alt="furniro logo" />
       </div>
-      <div>
-        <ul  className='flex gap-14'>
+      <div className=''>
+        <ul className='flex gap-14'>
           <li>Home</li>
           <li>Shop</li>
           <li>About</li>
@@ -17,10 +22,10 @@ const Navbar = () => {
       </div>
       <div>
         <ul className='flex gap-5'>
-          <li><img src="" alt="account" /></li>
-          <li><img src="" alt="search" /></li>
-          <li><img src="" alt="heart" /></li>
-          <li><img src="" alt="cart" /></li>
+          <li><img src={accountIcon} alt="account" /></li>
+          <li><img src={searchIcon} alt="search" /></li>
+          <li><img src={heartIcon} alt="heart" /></li>
+          <li><img src={cartIcon} alt="cart" /></li>
         </ul>
       </div>
     </div>
