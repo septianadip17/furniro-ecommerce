@@ -5,7 +5,7 @@ import lolito from "../assets/img/products/lolito.png";
 import respira from "../assets/img/products/respira.png";
 import grifo from "../assets/img/products/grifo.png";
 import muggo from "../assets/img/products/muggo.png";
-import pigky from "../assets/img/products/pingky.png";
+import pingky from "../assets/img/products/pingky.png";
 import potty from "../assets/img/products/potty.png";
 
 const Products = () => {
@@ -17,7 +17,7 @@ const Products = () => {
       normalPrice: "3.500.000",
       tagType: "discount",
       tagName: "-30%",
-      img: "syltherine",
+      img: syltherine,
     },
     {
       name: "Leviosa",
@@ -26,7 +26,7 @@ const Products = () => {
       normalPrice: "2.500.000",
       tagType: null,
       tagName: null,
-      img: "leviosa",
+      img: leviosa,
     },
     {
       name: "Lolito",
@@ -35,7 +35,7 @@ const Products = () => {
       normalPrice: "14.000.000",
       tagType: "discount",
       tagName: "-50%",
-      img: "lolito",
+      img: lolito,
     },
     {
       name: "Respira",
@@ -44,7 +44,7 @@ const Products = () => {
       normalPrice: "500.000",
       tagType: "new",
       tagName: "New",
-      img: "respira",
+      img: respira,
     },
     {
       name: "Grifo",
@@ -53,7 +53,7 @@ const Products = () => {
       normalPrice: "1.500.000",
       tagType: null,
       tagName: null,
-      img: "Grifo",
+      img: grifo,
     },
     {
       name: "Muggo",
@@ -62,7 +62,7 @@ const Products = () => {
       normalPrice: "150.000",
       tagType: "new",
       tagName: "New",
-      img: "muggo",
+      img: muggo,
     },
     {
       name: "Pingky",
@@ -71,7 +71,7 @@ const Products = () => {
       normalPrice: "14.000.000",
       tagType: "discount",
       tagName: "-50%",
-      img: "pingky",
+      img: pingky,
     },
     {
       name: "Potty",
@@ -80,7 +80,7 @@ const Products = () => {
       normalPrice: "500.000",
       tagType: "new",
       tagName: "New",
-      img: "potty",
+      img: potty,
     },
   ];
 
@@ -92,7 +92,54 @@ const Products = () => {
       </div>
 
       {/* products grid  */}
-      <div className="grid grid-cols-4"></div>
+      <div className="grid grid-cols-4 gap-4">
+        {allProducts.map((product, index) => (
+          <div
+            key={index}
+            className="relative bg-white shadow rounded-lg overflow-hidden"
+          >
+            {/* Product Image */}
+            <img
+              src={product.img}
+              alt={product.name}
+              className="w-full h-48 object-cover"
+            />
+
+            {/* Tag */}
+            {product.tagType && (
+              <div
+                className={`absolute top-2 right-2 bg-${
+                  product.tagType === "discount" ? "red" : "green"
+                }-500 text-white text-xs font-bold px-2 py-1 rounded-full`}
+              >
+                {product.tagName}
+              </div>
+            )}
+
+            {/* Product Details */}
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">{product.name}</h3>
+              <p className="text-gray-500">{product.desc}</p>
+              <div className="mt-2">
+                {product.discPrice ? (
+                  <div>
+                    <span className="text-red-500 font-bold">
+                      {product.discPrice}
+                    </span>
+                    <span className="text-gray-500 line-through ml-2">
+                      {product.normalPrice}
+                    </span>
+                  </div>
+                ) : (
+                  <span className="text-gray-700 font-bold">
+                    {product.normalPrice}
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
