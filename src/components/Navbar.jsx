@@ -2,12 +2,12 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className='flex'>
+    <div className='container mx-auto m-5 p-6 flex justify-between border-2 border-red-400'>
       <div>
-        logo
+        
       </div>
       <div>
-        <ul>
+        <ul  className='flex gap-14'>
           <li>Home</li>
           <li>Shop</li>
           <li>About</li>
@@ -15,7 +15,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div>
-        <ul>
+        <ul className='flex gap-5'>
           <li><img src="" alt="account" /></li>
           <li><img src="" alt="search" /></li>
           <li><img src="" alt="heart" /></li>
