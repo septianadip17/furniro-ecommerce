@@ -13,7 +13,7 @@ const Navbar = () => {
         <img src={furniroLogo} alt="furniro logo" />
       </div>
       <div className=''>
-        <ul className='flex gap-14'>
+        <ul className='flex gap-14 font-bold text-xl'>
           <li>Home</li>
           <li>Shop</li>
           <li>About</li>
