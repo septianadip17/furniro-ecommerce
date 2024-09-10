@@ -5,6 +5,7 @@ import Room from "./components/Room";
 import Products from "./components/Products";
 import Share from "./components/Share";
 import Footer from "./components/Footer";
+import InspirationRooms from "./components/InspirationRooms";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Header />
       <Room />
       <Products />
+      <InspirationRooms />
       <Share />
       <Footer />
     </div>
