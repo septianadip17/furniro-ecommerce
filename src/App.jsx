@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Room from "./components/Room";
 import Products from "./components/Products";
 import Share from "./components/Share";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Room />
       <Products />
       <Share />
+      <Footer />
     </div>
   );
 };
