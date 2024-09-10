@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Room from "./components/Room";
 import Products from "./components/Products";
+import Share from "./components/Share";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Header />
       <Room />
       <Products />
+      <Share />
     </div>
   );
 };
