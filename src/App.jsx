@@ -6,7 +6,7 @@ import Products from "./components/Products";
 
 const App = () => {
   return (
-    <div className="container mx-auto border-4 border-black">
+    <div className="container mx-auto">
       <Navbar />
       <Header />
       <Room />

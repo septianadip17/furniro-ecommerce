@@ -7,7 +7,7 @@ import cartIcon from "../assets/icons/cart.svg";
 
 const Navbar = () => {
   return (
-    <div className="container mx-auto p-5 flex justify-between border-2 border-red-400">
+    <div className="container mx-auto p-5 flex justify-between">
       <div>
         <img src={furniroLogo} alt="furniro logo" />
       </div>

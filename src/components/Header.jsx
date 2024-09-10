@@ -4,7 +4,7 @@ import banner from "../assets/img/banner-header.png";
 const Header = () => {
   return (
     <div
-      className="h-[800px] bg-cover bg-center border-2 border-orange-400 flex"
+      className="h-[800px] bg-cover bg-center flex"
       style={{ backgroundImage: `url(${banner})` }}
     >
       <div className="flex justify-center items-center mx-auto">
