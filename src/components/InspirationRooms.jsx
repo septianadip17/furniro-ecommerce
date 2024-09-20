@@ -21,10 +21,22 @@ const InspirationRooms = () => {
       </div>
 
       {/* inspiration rooms */}
-      <div className="w-3/5 p-6 flex">
-        <img src={room1} alt="Room 1" className="w-2/3 mr-4 object-cover" />
-        <img src={room2} alt="Room 2" className="w-2/3 mr-4 object-cover" />
-        <img src={room3} alt="Room 3" className="w-2/3 object-cover" />
+      <div className="w-3/5 p-6 flex space-x-4 overflow-hidden">
+        <img
+          src={room1}
+          alt="Room 1"
+          className="flex-1 object-cover rounded-lg h-64"
+        />
+        <img
+          src={room2}
+          alt="Room 2"
+          className="flex-1 object-cover rounded-lg h-64"
+        />
+        <img
+          src={room3}
+          alt="Room 3"
+          className="flex-1 object-cover rounded-lg h-64"
+        />
       </div>
     </div>
   );
