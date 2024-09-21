@@ -20,7 +20,7 @@ const InspirationRooms = () => {
         </button>
       </div>
 
-      {/* inspiration rooms */}
+      {/* inspiration rooms, i make it to be horizontal */}
       <div className="w-3/5 p-6 flex space-x-4 overflow-hidden">
         <img
           src={room1}
